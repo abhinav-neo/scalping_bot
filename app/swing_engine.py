@@ -285,6 +285,17 @@ class SwingEngine:
 
         log.warning("vol multiplier %.2f (leverage target %.1fx)", mult, LEVERAGE_MULT)
 
+        # Portfolio-level exposure budget. MAX_LEVERAGE caps a SINGLE position, so
+        # on its own it allowed a $15.8k order on a $10.3k account and every entry
+        # was rejected for insufficient buying power. Gross exposure across all
+        # open positions must stay within LEVERAGE_MULT x equity, so each new
+        # position gets a share of what is left.
+        gross_now = sum(abs(p.get("market_value", 0.0)) for p in live.values())
+        budget = max(LEVERAGE_MULT * equity - gross_now, 0.0)
+        per_slot = budget / max(slots, 1)
+        log.warning("exposure: gross %.0f / budget %.0f -> %.0f per slot",
+                    gross_now, LEVERAGE_MULT * equity, per_slot)
+
         opened = 0
         for mp, sym, sig in cands:
             if opened >= slots:
@@ -302,7 +313,9 @@ class SwingEngine:
                 k = max((b * p_win - (1 - p_win)) / b, 0.0)
                 r *= float(np.clip(k * 0.25 / RISK, 0.5, 2.0))
             qty = (equity * r * mult) / max(stop_dist, 1e-6)
-            qty = min(qty, (equity * MAX_LEVERAGE) / entry)
+            # cap by this slot's share of the remaining exposure budget, not by
+            # a multiple of the whole account
+            qty = min(qty, per_slot / entry)
             qty = int(qty)
             if qty <= 0:
                 continue
