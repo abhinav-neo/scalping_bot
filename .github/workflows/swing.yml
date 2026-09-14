@@ -78,6 +78,7 @@ jobs:
           fi
 
       - name: Run decision cycle
+        id: cycle
         env:
           ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
           ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
@@ -87,7 +88,51 @@ jobs:
           LOG_DIR: logs
           FORCE_RUN: ${{ inputs.force }}
           PYTHONPATH: ${{ github.workspace }}
-        run: python -m app.gh_runner
+        run: python -m app.gh_runner 2>&1 | tee run.log
+
+      # Readable summary on the run page, so checking the bot is a glance rather
+      # than scrolling raw logs.
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## Swing bot — $(date -u '+%Y-%m-%d %H:%M UTC')"
+            echo ""
+            if grep -q "outside the" run.log 2>/dev/null; then
+              echo "**SKIPPED** — outside the 15:15–15:58 ET trading window."
+            elif grep -q "RESULT" run.log 2>/dev/null; then
+              echo "### Result"
+              echo '```'
+              grep -E "RESULT|equity=" run.log | tail -3
+              echo '```'
+              ENTRIES=$(grep -c "ENTRY " run.log 2>/dev/null || echo 0)
+              CLOSES=$(grep -c "closing " run.log 2>/dev/null || echo 0)
+              FAILS=$(grep -c "order failed" run.log 2>/dev/null || echo 0)
+              echo ""
+              echo "| | |"
+              echo "|---|---|"
+              echo "| Opened | $ENTRIES |"
+              echo "| Closed | $CLOSES |"
+              echo "| Rejected | $FAILS |"
+              if [ "$FAILS" != "0" ]; then
+                echo ""
+                echo "**$FAILS orders were rejected — check sizing/buying power.**"
+              fi
+              echo ""
+              echo "### Exposure"
+              echo '```'
+              grep "exposure:" run.log | tail -1 || echo "n/a"
+              echo '```'
+              if grep -q "ENTRY " run.log; then
+                echo "### Positions opened"
+                echo '```'
+                grep "ENTRY " run.log | sed 's/.*swing_engine //' | head -20
+                echo '```'
+              fi
+            else
+              echo "**No cycle result** — the run may have failed before trading."
+            fi
+          } >> $GITHUB_STEP_SUMMARY
 
       - name: Persist state
         if: always()
