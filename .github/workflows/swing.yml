@@ -50,6 +50,33 @@ jobs:
           restore-keys: |
             swing-models-
 
+      # Fail early and clearly if secrets are missing or mis-scoped, rather than
+      # deep inside the runner. Prints lengths only -- never the values.
+      - name: Check secrets
+        env:
+          ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
+          ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
+        run: |
+          ok=1
+          if [ -z "$ALPACA_KEY_ID" ]; then
+            echo "::error::ALPACA_KEY_ID is empty or not visible to this job"
+            ok=0
+          else
+            echo "ALPACA_KEY_ID present (${#ALPACA_KEY_ID} chars, expect 26)"
+          fi
+          if [ -z "$ALPACA_SECRET" ]; then
+            echo "::error::ALPACA_SECRET is empty or not visible to this job"
+            ok=0
+          else
+            echo "ALPACA_SECRET present (${#ALPACA_SECRET} chars, expect 43-44)"
+          fi
+          if [ "$ok" = "0" ]; then
+            echo "Add them under Settings > Secrets and variables > Actions >"
+            echo "  *Repository secrets* (NOT Environment secrets), named exactly"
+            echo "  ALPACA_KEY_ID and ALPACA_SECRET."
+            exit 1
+          fi
+
       - name: Run decision cycle
         env:
           ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
