@@ -1,0 +1,123 @@
+{
+  "go": false,
+  "best_threshold": 0.93,
+  "stack": [
+    {
+      "layer": "0 ideal",
+      "annual_%": 48.7,
+      "sharpe": 26.79,
+      "edge": 25.3,
+      "maxDD_%": -2.2,
+      "trades": 7001,
+      "DSR": 1.0
+    },
+    {
+      "layer": "1 +lag",
+      "annual_%": 31.4,
+      "sharpe": 21.84,
+      "edge": 17.39,
+      "maxDD_%": -2.5,
+      "trades": 7015,
+      "DSR": 1.0
+    },
+    {
+      "layer": "2 +intrabar",
+      "annual_%": 31.0,
+      "sharpe": 20.25,
+      "edge": 16.4,
+      "maxDD_%": -2.9,
+      "trades": 7071,
+      "DSR": 1.0
+    },
+    {
+      "layer": "3 +stop slip",
+      "annual_%": 29.5,
+      "sharpe": 19.03,
+      "edge": 15.29,
+      "maxDD_%": -3.3,
+      "trades": 7071,
+      "DSR": 1.0
+    },
+    {
+      "layer": "4 +limit fills",
+      "annual_%": 12.7,
+      "sharpe": 10.35,
+      "edge": 8.5,
+      "maxDD_%": -4.3,
+      "trades": 5306,
+      "DSR": 1.0
+    },
+    {
+      "layer": "5 +costs (REAL)",
+      "annual_%": 1.6,
+      "sharpe": 1.06,
+      "edge": 0.42,
+      "maxDD_%": -7.7,
+      "trades": 5305,
+      "DSR": 0.06
+    }
+  ],
+  "thresholds": [
+    {
+      "thresh": 0.75,
+      "trades": 12582,
+      "trades_day": 34.6,
+      "annual_%": -7.9,
+      "sharpe": -4.14,
+      "edge": -2.81,
+      "win_%": 48.6,
+      "$/trade": -0.667,
+      "maxDD_%": -18.0,
+      "DSR": 0.0
+    },
+    {
+      "thresh": 0.8,
+      "trades": 10490,
+      "trades_day": 28.8,
+      "annual_%": -4.8,
+      "sharpe": -2.76,
+      "edge": -2.18,
+      "win_%": 49.1,
+      "$/trade": -0.512,
+      "maxDD_%": -14.4,
+      "DSR": 0.0
+    },
+    {
+      "thresh": 0.85,
+      "trades": 8088,
+      "trades_day": 22.2,
+      "annual_%": -1.6,
+      "sharpe": -1.19,
+      "edge": -1.25,
+      "win_%": 49.6,
+      "$/trade": -0.27,
+      "maxDD_%": -11.1,
+      "DSR": 0.0
+    },
+    {
+      "thresh": 0.9,
+      "trades": 5305,
+      "trades_day": 14.6,
+      "annual_%": 1.6,
+      "sharpe": 1.06,
+      "edge": 0.42,
+      "win_%": 50.6,
+      "$/trade": 0.142,
+      "maxDD_%": -7.7,
+      "DSR": 0.06
+    },
+    {
+      "thresh": 0.93,
+      "trades": 3493,
+      "trades_day": 9.6,
+      "annual_%": 2.7,
+      "sharpe": 2.58,
+      "edge": 2.22,
+      "win_%": 52.4,
+      "$/trade": 0.585,
+      "maxDD_%": -5.5,
+      "DSR": 0.409
+    }
+  ],
+  "spy_annual": 22.9
+}

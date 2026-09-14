@@ -1,0 +1,87 @@
+name: swing-bot
+
+on:
+  schedule:
+    # 19:20 UTC = 15:20 ET (EDT). GitHub cron is best-effort and can be delayed
+    # 5-30+ min, so we schedule EARLY and the runner refuses to trade outside
+    # 15:15-15:58 ET. A missed run beats a run at the wrong price.
+    - cron: "20 19 * * 1-5"
+    # 20:20 UTC = 15:20 ET (EST, Nov-Mar). The window check makes the
+    # off-season schedule a harmless no-op.
+    - cron: "20 20 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Ignore the time window (testing only)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: swing-bot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  trade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Models are ~74MB and take minutes to train, so cache rather than
+      # rebuilding every run.
+      - name: Restore models
+        uses: actions/cache@v4
+        with:
+          path: state/swing_models
+          key: swing-models-${{ hashFiles('app/swing.py','app/swing_engine.py') }}
+          restore-keys: |
+            swing-models-
+
+      - name: Run decision cycle
+        env:
+          ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
+          ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
+          ALPACA_PAPER: "true"
+          STATE_DIR: state
+          MODEL_DIR: models
+          LOG_DIR: logs
+          FORCE_RUN: ${{ inputs.force }}
+          PYTHONPATH: ${{ github.workspace }}
+        run: python -m app.gh_runner
+
+      - name: Persist state
+        if: always()
+        run: |
+          git config user.name "swing-bot"
+          git config user.email "swing-bot@users.noreply.github.com"
+          git add state/swing_state.json state/monitor.jsonl 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "state: $(date -u +%Y-%m-%d) cycle"
+            git push
+          else
+            echo "no state change"
+          fi
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-${{ github.run_number }}
+          path: |
+            logs/
+            state/monitor.jsonl
+          retention-days: 30
+          if-no-files-found: ignore

@@ -1,0 +1,170 @@
+{
+  "AMD": {
+    "base": {
+      "trades": 7892,
+      "ret_pct": 585.36,
+      "net_per_trade": 3.709,
+      "sharpe": 6.38,
+      "win_pct": 58.0,
+      "pf": 1.29,
+      "maxdd_pct": -5.08,
+      "long_pct": 46.0
+    },
+    "balanced": {
+      "trades": 7873,
+      "ret_pct": 646.87,
+      "net_per_trade": 4.108,
+      "sharpe": 6.95,
+      "win_pct": 58.5,
+      "pf": 1.33,
+      "maxdd_pct": -6.18,
+      "long_pct": 45.9
+    },
+    "filter": {
+      "trades": 6152,
+      "ret_pct": 518.58,
+      "net_per_trade": 4.215,
+      "sharpe": 6.58,
+      "win_pct": 58.5,
+      "pf": 1.35,
+      "maxdd_pct": -6.72,
+      "long_pct": 44.7
+    },
+    "both": {
+      "trades": 6083,
+      "ret_pct": 522.82,
+      "net_per_trade": 4.297,
+      "sharpe": 6.98,
+      "win_pct": 58.5,
+      "pf": 1.35,
+      "maxdd_pct": -4.84,
+      "long_pct": 44.6
+    }
+  },
+  "COIN": {
+    "base": {
+      "trades": 8318,
+      "ret_pct": 1693.79,
+      "net_per_trade": 10.181,
+      "sharpe": 9.69,
+      "win_pct": 65.5,
+      "pf": 1.91,
+      "maxdd_pct": -7.5,
+      "long_pct": 47.4
+    },
+    "balanced": {
+      "trades": 8273,
+      "ret_pct": 1622.16,
+      "net_per_trade": 9.804,
+      "sharpe": 9.31,
+      "win_pct": 64.9,
+      "pf": 1.85,
+      "maxdd_pct": -10.82,
+      "long_pct": 46.6
+    },
+    "filter": {
+      "trades": 6789,
+      "ret_pct": 1365.36,
+      "net_per_trade": 10.056,
+      "sharpe": 10.8,
+      "win_pct": 65.1,
+      "pf": 1.91,
+      "maxdd_pct": -4.11,
+      "long_pct": 47.2
+    },
+    "both": {
+      "trades": 6796,
+      "ret_pct": 1348.42,
+      "net_per_trade": 9.921,
+      "sharpe": 10.62,
+      "win_pct": 64.9,
+      "pf": 1.9,
+      "maxdd_pct": -4.97,
+      "long_pct": 46.4
+    }
+  },
+  "NVDA": {
+    "base": {
+      "trades": 7843,
+      "ret_pct": 209.95,
+      "net_per_trade": 1.338,
+      "sharpe": 2.53,
+      "win_pct": 55.5,
+      "pf": 1.1,
+      "maxdd_pct": -27.76,
+      "long_pct": 43.5
+    },
+    "balanced": {
+      "trades": 7773,
+      "ret_pct": 229.33,
+      "net_per_trade": 1.475,
+      "sharpe": 2.65,
+      "win_pct": 55.2,
+      "pf": 1.12,
+      "maxdd_pct": -27.86,
+      "long_pct": 41.5
+    },
+    "filter": {
+      "trades": 6134,
+      "ret_pct": 160.77,
+      "net_per_trade": 1.31,
+      "sharpe": 2.26,
+      "win_pct": 55.4,
+      "pf": 1.1,
+      "maxdd_pct": -28.67,
+      "long_pct": 42.6
+    },
+    "both": {
+      "trades": 6193,
+      "ret_pct": 187.5,
+      "net_per_trade": 1.514,
+      "sharpe": 2.54,
+      "win_pct": 54.8,
+      "pf": 1.12,
+      "maxdd_pct": -26.09,
+      "long_pct": 40.7
+    }
+  },
+  "TQQQ": {
+    "base": {
+      "trades": 8156,
+      "ret_pct": 510.75,
+      "net_per_trade": 3.131,
+      "sharpe": 4.95,
+      "win_pct": 56.0,
+      "pf": 1.23,
+      "maxdd_pct": -6.36,
+      "long_pct": 56.2
+    },
+    "balanced": {
+      "trades": 8102,
+      "ret_pct": 447.32,
+      "net_per_trade": 2.761,
+      "sharpe": 4.72,
+      "win_pct": 55.7,
+      "pf": 1.2,
+      "maxdd_pct": -10.26,
+      "long_pct": 53.7
+    },
+    "filter": {
+      "trades": 6580,
+      "ret_pct": 410.98,
+      "net_per_trade": 3.123,
+      "sharpe": 5.5,
+      "win_pct": 56.3,
+      "pf": 1.24,
+      "maxdd_pct": -9.64,
+      "long_pct": 54.7
+    },
+    "both": {
+      "trades": 6603,
+      "ret_pct": 363.0,
+      "net_per_trade": 2.749,
+      "sharpe": 5.25,
+      "win_pct": 55.9,
+      "pf": 1.2,
+      "maxdd_pct": -15.33,
+      "long_pct": 52.1
+    }
+  }
+}

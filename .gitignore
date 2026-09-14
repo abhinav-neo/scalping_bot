@@ -1,0 +1,19 @@
+.venv/
+python312/
+state/swing_models/
+state/archive*/
+logs/
+*.log
+*.err
+__pycache__/
+*.joblib
+models/
+models_h6/
+models_h12/
+models_h6w/
+models_wide/
+*.zip
+# never commit credentials
+.env
+.env.bak*
+.env.local

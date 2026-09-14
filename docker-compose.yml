@@ -1,0 +1,28 @@
+services:
+  bot:
+    build: .
+    container_name: scalping-bot
+    env_file: .env
+    restart: unless-stopped
+    stop_grace_period: 60s        # gives the bot time to flatten on shutdown
+    volumes:
+      - ./models:/app/models
+      - ./state:/app/state
+      - ./logs:/app/logs
+    logging:
+      driver: json-file
+      options: {max-size: "20m", max-file: "5"}
+
+  dashboard:
+    build: .
+    container_name: scalping-dashboard
+    env_file: .env
+    restart: unless-stopped
+    command: ["python", "-m", "app.dashboard"]
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./models:/app/models
+      - ./state:/app/state
+      - ./logs:/app/logs
+    depends_on: [bot]

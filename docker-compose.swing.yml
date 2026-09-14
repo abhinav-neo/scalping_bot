@@ -1,0 +1,19 @@
+services:
+  swing:
+    build: .
+    container_name: swing-bot
+    env_file: .env
+    restart: unless-stopped
+    stop_grace_period: 30s
+    command: ["python","-m","app.swing_engine","--loop"]
+    environment:
+      - STATE_DIR=/app/state
+      - MODEL_DIR=/app/models
+      - LOG_DIR=/app/logs
+    volumes:
+      - ./models:/app/models
+      - ./state:/app/state
+      - ./logs:/app/logs
+    logging:
+      driver: json-file
+      options: {max-size: "20m", max-file: "5"}

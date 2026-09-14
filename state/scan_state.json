@@ -1,0 +1,286 @@
+{
+  "ts": "2026-08-04T15:54:57.721319-04:00",
+  "meta": {
+    "bar_source": "stream",
+    "stream_age_s": 54.8,
+    "market_trend_bps": null,
+    "market_trend_bars": 12,
+    "can_open": false,
+    "block_reason": "outside entry window",
+    "meta_threshold": 0.85,
+    "open_positions": 0,
+    "pending": 0
+  },
+  "symbols": {
+    "MS": {
+      "ts": "2026-08-04T15:54:57.720999-04:00",
+      "symbol": "MS",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "JPM": {
+      "ts": "2026-08-04T15:54:57.721021-04:00",
+      "symbol": "JPM",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "WMT": {
+      "ts": "2026-08-04T15:54:57.721030-04:00",
+      "symbol": "WMT",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "PFE": {
+      "ts": "2026-08-04T15:54:57.721037-04:00",
+      "symbol": "PFE",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "WFC": {
+      "ts": "2026-08-04T15:54:57.721045-04:00",
+      "symbol": "WFC",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "TSM": {
+      "ts": "2026-08-04T15:54:57.721052-04:00",
+      "symbol": "TSM",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "XLV": {
+      "ts": "2026-08-04T15:54:57.721059-04:00",
+      "symbol": "XLV",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "ORCL": {
+      "ts": "2026-08-04T15:54:57.721066-04:00",
+      "symbol": "ORCL",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "HD": {
+      "ts": "2026-08-04T15:54:57.721072-04:00",
+      "symbol": "HD",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "GOOGL": {
+      "ts": "2026-08-04T15:54:57.721079-04:00",
+      "symbol": "GOOGL",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "UNH": {
+      "ts": "2026-08-04T15:54:57.721086-04:00",
+      "symbol": "UNH",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "UBER": {
+      "ts": "2026-08-04T15:54:57.721093-04:00",
+      "symbol": "UBER",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "MCD": {
+      "ts": "2026-08-04T15:54:57.721100-04:00",
+      "symbol": "MCD",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "JNJ": {
+      "ts": "2026-08-04T15:54:57.721106-04:00",
+      "symbol": "JNJ",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "ABBV": {
+      "ts": "2026-08-04T15:54:57.721113-04:00",
+      "symbol": "ABBV",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "C": {
+      "ts": "2026-08-04T15:54:57.721119-04:00",
+      "symbol": "C",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "BAC": {
+      "ts": "2026-08-04T15:54:57.721126-04:00",
+      "symbol": "BAC",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "SCHW": {
+      "ts": "2026-08-04T15:54:57.721133-04:00",
+      "symbol": "SCHW",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "DIS": {
+      "ts": "2026-08-04T15:54:57.721140-04:00",
+      "symbol": "DIS",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "BA": {
+      "ts": "2026-08-04T15:54:57.721147-04:00",
+      "symbol": "BA",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "XLF": {
+      "ts": "2026-08-04T15:54:57.721153-04:00",
+      "symbol": "XLF",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "IWM": {
+      "ts": "2026-08-04T15:54:57.721161-04:00",
+      "symbol": "IWM",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "VZ": {
+      "ts": "2026-08-04T15:54:57.721169-04:00",
+      "symbol": "VZ",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "T": {
+      "ts": "2026-08-04T15:54:57.721175-04:00",
+      "symbol": "T",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "NKE": {
+      "ts": "2026-08-04T15:54:57.721182-04:00",
+      "symbol": "NKE",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "XBI": {
+      "ts": "2026-08-04T15:54:57.721188-04:00",
+      "symbol": "XBI",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "AAPL": {
+      "ts": "2026-08-04T15:54:57.721195-04:00",
+      "symbol": "AAPL",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "MSFT": {
+      "ts": "2026-08-04T15:54:57.721201-04:00",
+      "symbol": "MSFT",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "AMZN": {
+      "ts": "2026-08-04T15:54:57.721208-04:00",
+      "symbol": "AMZN",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "META": {
+      "ts": "2026-08-04T15:54:57.721214-04:00",
+      "symbol": "META",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "CRM": {
+      "ts": "2026-08-04T15:54:57.721221-04:00",
+      "symbol": "CRM",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "ADBE": {
+      "ts": "2026-08-04T15:54:57.721227-04:00",
+      "symbol": "ADBE",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "AVGO": {
+      "ts": "2026-08-04T15:54:57.721234-04:00",
+      "symbol": "AVGO",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "NVDA": {
+      "ts": "2026-08-04T15:54:57.721241-04:00",
+      "symbol": "NVDA",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "TSLA": {
+      "ts": "2026-08-04T15:54:57.721247-04:00",
+      "symbol": "TSLA",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "PLTR": {
+      "ts": "2026-08-04T15:54:57.721253-04:00",
+      "symbol": "PLTR",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "AMD": {
+      "ts": "2026-08-04T15:54:57.721260-04:00",
+      "symbol": "AMD",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "AMAT": {
+      "ts": "2026-08-04T15:54:57.721266-04:00",
+      "symbol": "AMAT",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "KLAC": {
+      "ts": "2026-08-04T15:54:57.721273-04:00",
+      "symbol": "KLAC",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "SMCI": {
+      "ts": "2026-08-04T15:54:57.721280-04:00",
+      "symbol": "SMCI",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "HOOD": {
+      "ts": "2026-08-04T15:54:57.721286-04:00",
+      "symbol": "HOOD",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "MRVL": {
+      "ts": "2026-08-04T15:54:57.721293-04:00",
+      "symbol": "MRVL",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "TER": {
+      "ts": "2026-08-04T15:54:57.721299-04:00",
+      "symbol": "TER",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "INTC": {
+      "ts": "2026-08-04T15:54:57.721306-04:00",
+      "symbol": "INTC",
+      "status": "blocked",
+      "reason": "outside entry window"
+    },
+    "WDC": {
+      "ts": "2026-08-04T15:54:57.721312-04:00",
+      "symbol": "WDC",
+      "status": "blocked",
+      "reason": "outside entry window"
+    }
+  }
+}
